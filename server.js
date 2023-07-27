@@ -20,6 +20,16 @@ app.use(koaBody({
 // Создаем пустой объект для хранения соединений клиентов по их именам
 const clients = {};
 
+// GET
+router.get('/', (ctx, next) => {
+  // const params = new URLSearchParams(ctx.request.querystring);
+  // const { method, id } = { method: params.get("method"), id: params.get("id") };
+
+  // всё остальное для GET
+  ctx.status = 200;
+  ctx.body = { status: true, };
+});
+
 // POST
 router.post('/', (ctx, next) => {
   const { login } = ctx.request.body;
