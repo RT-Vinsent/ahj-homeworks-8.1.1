@@ -40,9 +40,6 @@ router.post('/', (ctx, next) => {
   const params = new URLSearchParams(ctx.request.querystring);
   const { method } = { method: params.get("method") };
 
-  console.log(login);
-  console.log(method);
-
   /* если метод logining */
   if (method === 'logining') {
 
@@ -97,11 +94,7 @@ function sendClientsUsers(clients) {
 
   for (const key in clients) {
     if (clients.hasOwnProperty(key)) {
-      const value = clients[key];
-      console.log(`${key}: ${value}`);
-      if (clients[key].ws.readyState === WS.OPEN) {
-        arr.push(key);
-      }
+      if (clients[key].ws.readyState === WS.OPEN) { arr.push(key); }
     }
   }
 
@@ -127,7 +120,9 @@ const chat = [
 wsServer.on('connection', (ws, req) => {
   console.log('connection ws');
   /* получаем имя из параметров url */
-  const { searchParams } = new URL(req.url, 'http://example.com'); // Второй параметр можно указать любой, это не важно в данном случае
+  const serverUrl = `https://${ws._socket.remoteAddress}:${ws._socket.remotePort}`;
+  console.log('Server URL:', serverUrl);
+  const { searchParams } = new URL(req.url, serverUrl); // Второй параметр можно указать любой, это не важно в данном случае
   const username = searchParams.get('login');
   console.log(username);
 
