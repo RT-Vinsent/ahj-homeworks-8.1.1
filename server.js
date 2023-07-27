@@ -122,7 +122,7 @@ wsServer.on('connection', (ws, req) => {
   /* получаем имя из параметров url */
   const serverUrl = `https://${ws._socket.remoteAddress}:${ws._socket.remotePort}`;
   console.log('Server URL:', serverUrl);
-  const { searchParams } = new URL(req.url, serverUrl); // Второй параметр можно указать любой, это не важно в данном случае
+  const { searchParams } = new URL(req.url, serverUrl); // Второй параметр в данном случае не важен
   const username = searchParams.get('login');
   console.log(username);
 
