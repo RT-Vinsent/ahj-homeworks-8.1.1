@@ -75,12 +75,16 @@ function sendClientsUsers(clients) {
     if (clients.hasOwnProperty(key)) {
       const value = clients[key];
       console.log(`${key}: ${value}`);
-      arr.push(key);
+      if (clients[key].ws.readyState === WS.OPEN) {
+        arr.push(key);
+      }
     }
   }
 
   for (let i = 0; i < arr.length; i += 1) {
-    clients[arr[i]].ws.send(JSON.stringify({ chat: [ {names: arr, type: 'user'} ] } ));
+    if (clients[arr[i]].ws.readyState === WS.OPEN) {
+      clients[arr[i]].ws.send(JSON.stringify({ chat: [ {names: arr, type: 'user'} ] } ));
+    }
   }
 }
 
