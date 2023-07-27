@@ -120,9 +120,7 @@ const chat = [
 wsServer.on('connection', (ws, req) => {
   console.log('connection ws');
   /* получаем имя из параметров url */
-  const serverUrl = `https://${ws._socket.remoteAddress}:${ws._socket.remotePort}`;
-  console.log('Server URL:', serverUrl);
-  const { searchParams } = new URL(req.url, serverUrl); // Второй параметр в данном случае не важен
+  const { searchParams } = new URL(req.url, 'http://example.com'); // Второй параметр в данном случае не важен
   const username = searchParams.get('login');
   console.log(username);
 
