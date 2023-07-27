@@ -127,11 +127,8 @@ const chat = [
 wsServer.on('connection', (ws, req) => {
   console.log('connection ws');
   /* получаем имя из параметров url */
-  // const { searchParams } = new URL(req.url, req.url);
-  // const username = searchParams.get('login');
-  console.log(req);
-  const params = new URLSearchParams(req.url);
-  const { login: username } = { method: params.get("login") };
+  const { searchParams } = new URL(req.url, 'http://example.com'); // Второй параметр можно указать любой, это не важно в данном случае
+  const username = searchParams.get('login');
   console.log(username);
 
   /*
