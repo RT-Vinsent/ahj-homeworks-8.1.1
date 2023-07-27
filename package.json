@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "npm install",
-    "start": "pm2 start server.js --watch --name \"HW-chat\"",
+    "start": "pm2 start server.js --watch --no-daemon --name \"HW-chat\"",
     "watch": "pm2 start server.js --watch --no-daemon --name \"HW-chat\"",
     "stop": "pm2 stop \"HW-chat\"",
     "list": "pm2 list"

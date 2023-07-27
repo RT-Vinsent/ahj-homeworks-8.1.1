@@ -4,15 +4,13 @@
 
 ### Ссылкка на [github-pages](https://rt-vinsent.github.io/ahj-homeworks-8.1.2/)
 
-### Ссылкка на [frontend репозиторий](https://github.com/RT-Vinsent/ahj-homeworks-8.1.1)
+### Ссылкка на [frontend репозиторий](https://github.com/RT-Vinsent/ahj-homeworks-8.1.2)
 
-### Ссылкка на [backend репозиторий](https://github.com/RT-Vinsent/ahj-homeworks-8.1.2)
+### Ссылкка на [backend репозиторий](https://github.com/RT-Vinsent/ahj-homeworks-8.1.1)
 
 ### Ссылкка на [backend сервер](https://ahj-hw8-1.onrender.com)
 
 ---  
-
-# Домашнее задание к занятию
 
 # Домашнее задание к занятию "8. EventSource, Websockets"
 
